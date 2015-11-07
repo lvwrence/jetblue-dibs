@@ -14,8 +14,7 @@ def index():
 
 @app.route('/<code>')
 def subpage(code):
-    # render subpage react page here
-    return render_template('index.html')
+    return render_template('subpage.html')
 
 
 @app.route('/api/destinations')

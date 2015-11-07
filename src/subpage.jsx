@@ -10,4 +10,4 @@ var Subpage = React.createClass({
   }
 });
 
-module.exports = Subpage;
+render(<Subpage/>, document.getElementById('subpage'));

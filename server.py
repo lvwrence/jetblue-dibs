@@ -32,5 +32,5 @@ def feed(code):
         loc['point'] = str(loc['point'])[7:]
         loc['images'] = [p.get_standard_resolution_url() for p in instagram_api.location_recent_media(10, location_id=loc['id'])[0]]
         #loc['images'] = str(instagram_api.location_recent_media(10, location_id=loc['id']))
-    
+    location_list = [x for x in location_list if x['images'] != []]
     return json.dumps(location_list)

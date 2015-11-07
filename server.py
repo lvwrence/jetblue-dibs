@@ -3,6 +3,7 @@ from flask import Flask, render_template
 from instagram.client import InstagramAPI
 from code_to_coordinates import CODE_TO_COORDINATES_MAPPING
 from code_to_city import CODE_TO_CITY_MAPPING
+import json
 
 instagram_api = InstagramAPI(client_id='f233967f16b645c0ad5ff867e481371a', client_secret='c6b4c91c88024f218362f5163f8f657d')
 
@@ -26,4 +27,7 @@ def destinations():
 @app.route('/api/destinations/<code>/feed')
 def feed(code):
     lat, lng = CODE_TO_COORDINATES_MAPPING[code]
-    return str([x.__dict__ for x in instagram_api.location_search(lat=str(lat), lng=str(lng), distance=1000)])
+    location_list = [x.__dict__ for x in instagram_api.location_search(lat=str(lat), lng=str(lng), distance=1000)]
+    for loc in location_list:
+        loc['point'] = str(loc['point'])[7:]
+    return json.dumps(location_list)

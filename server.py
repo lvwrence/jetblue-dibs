@@ -9,4 +9,4 @@ def index():
 
 @app.route('/api/destinations')
 def destinations():
-    return app.send_static_file('destinations.json')
+    return render_template('destinations.json')

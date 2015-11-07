@@ -36,4 +36,4 @@ CODE_TO_CITY_MAPPING = {
         'BOS':'Boston, Massachusetts'
         }
 
-
+ALL_CODES = CODE_TO_CITY_MAPPING.keys()

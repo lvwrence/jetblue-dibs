@@ -48,7 +48,7 @@ def get_most_liked_pic_by_location(code):
 
     return most_liked.get_standard_resolution_url()
 
-        
+
 def most_liked_medium(medium):
     return max(medium, key=lambda m: len(m.likes))
 

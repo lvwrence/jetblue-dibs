@@ -2,6 +2,24 @@ var React = require('react');
 import { render } from 'react-dom';
 var request = require('superagent');
 
+var CardRow = React.createClass({
+  propTypes: {
+    destinations: React.PropTypes.array.isRequired
+  },
+
+  render: function() {
+    var cards = this.props.destinations.map(function(destination) {
+      return (<Card destination={destination} key={destination.code} />);
+    });
+
+    return (
+      <div className="row">
+        {cards}
+      </div>
+    );
+  }
+});
+
 var Card = React.createClass({
   propTypes: {
     destination: React.PropTypes.object.isRequired
@@ -10,7 +28,7 @@ var Card = React.createClass({
   render: function() {
     return (
       <div className="homepage-card four columns hvr-grow">
-        <a href="hi">
+        <a href={this.props.destination.code}>
           <img className="homepage-image" src={this.props.destination.image} />
           <h2 className="homepage-image-text">{this.props.destination.city}</h2>
         </a>
@@ -38,16 +56,26 @@ var Home = React.createClass({
   },
 
   render: function() {
-    var cards = this.state.destinations.map(function(destination) {
-      console.log(destination);
-      return (<Card destination={destination} key={destination.code} />);
+    var rows = [];
+    var row = [];
+    var count = 0;
+    for (var i = 0; i < this.state.destinations.length; i++) {
+      if (i && i % 3 === 0) {
+        rows.push(row);
+        row = [];
+      }
+      row.push(this.state.destinations[i]);
+    }
+
+    var rowDivs = rows.map(function(row) {
+      return (<CardRow destinations={row} />);
     });
 
     return (
       <div>
         <h1 className='tagline'>Get dibs.</h1>
         <div className='homepage-module'>
-          {cards}
+          {rowDivs}
         </div>
       </div>
     );

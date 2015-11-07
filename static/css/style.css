@@ -21,6 +21,11 @@
     height: 320px;
 }
 
+.row {
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
 .homepage-image-text {
    font-family: Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
    margin: 0 auto;
@@ -31,4 +36,18 @@
    top: 120px;
    left: 0;
    width: 320px;
+}
+
+.subpage {
+    width: 80%;
+    margin: 1em auto;
+}
+
+.subpage-feed {
+    float: left;
+    width: 340px;
+}
+
+.subpage-feed-photo {
+    width: 100%;
 }

@@ -7,6 +7,7 @@ from code_to_city import CODE_TO_CITY_MAPPING
 instagram_api = InstagramAPI(client_id='f233967f16b645c0ad5ff867e481371a', client_secret='c6b4c91c88024f218362f5163f8f657d')
 
 app = Flask(__name__)
+app.debug = True
 
 @app.route('/')
 def index():

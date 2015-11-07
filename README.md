@@ -1,7 +1,7 @@
 # jetblue-dibs
 
-```GET``` to ```/api/locations``` will return a list of all destination location objects,
-where a location object has fields
+```GET``` to ```/api/destinations``` will return a list of all destination objects,
+where a destination object has fields
 ```
 {
   code: "YUL",

@@ -20,7 +20,7 @@ CODE_TO_CITY_MAPPING = {
         'MCO':'Orlando, Florida',
         'MSY':'New Orleans, Louisiana',
         'NAS':'Nassau, Bahamas',
-        'PBI':'Palm Beach, Florida',
+        'PBI':'Palm Beach, California',
         'PLS':'Providenciales, Turks and Caicos Islands',
         'POP':'Puerto Plata, Dominican Republic',
         'PUJ':'Punta Cana, Dominican Republic',
@@ -32,8 +32,8 @@ CODE_TO_CITY_MAPPING = {
         'SXM':'Saint Maarten, Saint Martin',
         'TPA':'Tampa, Florida',
         'UVF':'Saint Lucia, Caribbean',
-        'LGB':'Long Beach, Florida',
+        'LGB':'Long Beach, California',
         'BOS':'Boston, Massachusetts'
         }
 
-ALL_CODES = CODE_TO_CITY_MAPPING.keys()
+ALL_CODES = CODE_TO_CITY_MAPPING.values()

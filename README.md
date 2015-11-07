@@ -10,7 +10,7 @@ where a destination object has fields:
     lat: 45.5017,
     lng: 73.5673
   },
-  image:"https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/e35/12224431_720653774746321_479880755_n.jpg"
+  image: "https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/e35/12224431_720653774746321_479880755_n.jpg"
 }
 ```
 
@@ -31,5 +31,24 @@ the soonest flight to that location from the `from` code.
 }
 ```
 
-```GET``` to ```/api/destinations/YUL/feed``` returns the most recent instagram photo geotagged
-near that code.
+```GET``` to ```/api/destinations/YUL/feed``` returns a list of recent images and videos
+geotagged in a landmark near that code's city. An image object looks like this:
+
+```
+{
+  type: "image",
+  link: "http://distillery.s3.amazonaws.com/media/2011/01/31/32d364527512437a8a17ba308a7c83bb_7.jpg",
+  landmark: "Dogpatch Labs"
+}
+```
+
+and a video object looks like this:
+
+```
+{
+  type: "video",
+  link: "http://distilleryvesper9-13.ak.instagram.com/090d06dad9cd11e2aa0912313817975d_101.mp4",
+  landmark: "Dogpatch Labs"
+}
+
+```

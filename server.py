@@ -12,6 +12,12 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/<code>')
+def subpage(code):
+    # render subpage react page here
+    return render_template('index.html')
+
+
 @app.route('/api/destinations')
 def destinations():
     return render_template('destinations.json')

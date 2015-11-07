@@ -35,3 +35,6 @@ the soonest flight to that location from the `from` code.
   expedia-price: 1684.68
 }
 ```
+
+```GET``` to ```/api/destinations/YUL/feed``` returns the most recent instagram photo geotagged
+near that code.

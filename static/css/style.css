@@ -1,14 +1,22 @@
+.tagline {
+    width: 80%;
+    margin: 1em auto;
+}
+
 .homepage-module {
     width: 80%;
-    margin: 3em auto;
+    margin: 1em auto;
 }
 
 .homepage-card {
+    cursor: pointer;
     position: relative;
     width: 100%;
 }
 
 .homepage-image {
+    transition: background-color 0.5s ease;
+    background-color: red;
     width: 320px;
     height: 320px;
 }

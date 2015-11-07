@@ -37,3 +37,17 @@
    left: 0;
    width: 320px;
 }
+
+.subpage {
+    width: 80%;
+    margin: 1em auto;
+}
+
+.subpage-feed {
+    float: left;
+    width: 340px;
+}
+
+.subpage-feed-photo {
+    width: 100%;
+}

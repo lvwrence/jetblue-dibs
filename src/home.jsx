@@ -28,7 +28,7 @@ var Card = React.createClass({
   render: function() {
     return (
       <div className="homepage-card four columns hvr-grow">
-        <a href="hi">
+        <a href={this.props.destination.code}>
           <img className="homepage-image" src={this.props.destination.image} />
           <h2 className="homepage-image-text">{this.props.destination.city}</h2>
         </a>

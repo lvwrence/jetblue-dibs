@@ -12,7 +12,7 @@ def create_destination(code):
                 'lat':CODE_TO_COORDINATES_MAPPING[code][0],
                 'lng':CODE_TO_COORDINATES_MAPPING[code][1],
                 },
-            'image':'http://travelnoire.com/wp-content/uploads/2015/07/Montreal_Canada.jpg'
+            'image':'http://dx9rjq5h30myv.cloudfront.net/wp-content/uploads/2014/03/Westminster-by-rebekahesme.jpg'
             }
 
 print(json.dumps([create_destination(code) for code in codes]))

@@ -31,7 +31,9 @@ CODE_TO_CITY_MAPPING = {
         'SJU':'San Juan, Puerto Rico',
         'SXM':'Saint Maarten, Saint Martin',
         'TPA':'Tampa, Florida',
-        'UVF':'Saint Lucia, Caribbean'
+        'UVF':'Saint Lucia, Caribbean',
+        'LGB':'Long Beach, Florida',
+        'BOS':'Boston, Massachusetts'
         }
 
 

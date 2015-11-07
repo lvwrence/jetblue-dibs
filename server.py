@@ -6,7 +6,9 @@ from code_to_city import CODE_TO_CITY_MAPPING
 
 instagram_api = InstagramAPI(client_id='f233967f16b645c0ad5ff867e481371a', client_secret='c6b4c91c88024f218362f5163f8f657d')
 
+
 app = Flask(__name__)
+app.debug = True
 
 @app.route('/')
 def index():
@@ -24,6 +26,4 @@ def destinations():
 @app.route('/api/destinations/<code>/feed')
 def feed(code):
     lat, lng = CODE_TO_COORDINATES_MAPPING[code]
-    instagram_api = InstagramAPI(client_id='f233967f16b645c0ad5ff867e481371a', client_secret='c6b4c91c88024f218362f5163f8f657d')
-    #return str(instagram_api.location_search(lat="37.7808851",lng="-122.3948632",distance=1000))
-    return str(instagram_api.location_search(lat=str(lat), lng=str(lng), distance=1000))
+    return str([x.__dict__ for x in instagram_api.location_search(lat=str(lat), lng=str(lng), distance=1000)])

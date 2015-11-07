@@ -1,0 +1,17 @@
+.feed-enter {
+  opacity: 0.01;
+}
+
+.feed-enter.feed-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.feed-leave {
+  opacity: 1;
+}
+
+.feed-leave.feed-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

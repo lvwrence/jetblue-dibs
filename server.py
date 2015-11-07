@@ -10,12 +10,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/<code>')
 def subpage(code):
-    # render subpage react page here
-    return render_template('index.html')
+    return render_template('subpage.html')
 
 
 @app.route('/api/destinations')

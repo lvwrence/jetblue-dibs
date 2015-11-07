@@ -1,21 +1,34 @@
+.tagline {
+    width: 80%;
+    margin: 1em auto;
+}
+
 .homepage-module {
     width: 80%;
-    margin: 0 auto;
+    margin: 1em auto;
 }
 
 .homepage-card {
+    cursor: pointer;
     position: relative;
     width: 100%;
 }
 
 .homepage-image {
+    transition: background-color 0.5s ease;
+    background-color: red;
     width: 320px;
     height: 320px;
 }
 
 .homepage-image-text {
+   font-family: Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   margin: 0 auto;
+   text-align: center;
+   font-size: 3em;
+   color: white;
    position: absolute;
-   top: 200px;
+   top: 120px;
    left: 0;
-   width: 100%;
+   width: 320px;
 }

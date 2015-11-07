@@ -1,4 +1,6 @@
 var React = require('react');
+import { render } from 'react-dom';
+var request = require('superagent');
 
 var Subpage = React.createClass({
   render: function() {
@@ -10,4 +12,4 @@ var Subpage = React.createClass({
   }
 });
 
-module.exports = Subpage;
+render(<Subpage />, document.getElementById('subpage'));

@@ -1,4 +1,5 @@
 var React = require('react');
+import { render } from 'react-dom';
 var request = require('superagent');
 
 var Card = React.createClass({
@@ -8,9 +9,11 @@ var Card = React.createClass({
 
   render: function() {
     return (
-      <div className="homepage-card four columns">
-        <img className="homepage-image" src={this.props.destination.image} />
-        <h2 className="homepage-image-text">{this.props.destination.city}</h2>
+      <div className="homepage-card four columns hvr-grow">
+        <a href="hi">
+          <img className="homepage-image" src={this.props.destination.image} />
+          <h2 className="homepage-image-text">{this.props.destination.city}</h2>
+        </a>
       </div>
     );
   }
@@ -41,11 +44,14 @@ var Home = React.createClass({
     });
 
     return (
-      <div className='homepage-module'>
-        {cards}
+      <div>
+        <h1 className='tagline'>Get dibs.</h1>
+        <div className='homepage-module'>
+          {cards}
+        </div>
       </div>
     );
   }
 });
 
-module.exports = Home;
+render(<Home />, document.getElementById('home'));

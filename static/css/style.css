@@ -1,0 +1,31 @@
+#main {
+    width: 80%;
+    margin-top: 30px;
+}
+
+#tagline {
+    text-align: center;
+    font-family: 'monofur';
+    color: orange;
+}
+
+#pics img {
+    width: 30%;
+    border: 1px solid black;
+    position: relative; 
+}
+
+
+.image { 
+   position: relative; 
+}
+
+#pics h2 {
+    z-index:100;
+    position:absolute;    
+    color:white;
+    font-size: 0.90em;
+    font-weight:bold;
+    left:150px;
+    top:350px;
+}

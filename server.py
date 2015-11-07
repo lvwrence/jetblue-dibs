@@ -30,4 +30,7 @@ def feed(code):
     location_list = [x.__dict__ for x in instagram_api.location_search(lat=str(lat), lng=str(lng), distance=1000)]
     for loc in location_list:
         loc['point'] = str(loc['point'])[7:]
+        loc['images'] = [p.get_standard_resolution_url() for p in instagram_api.location_recent_media(10, location_id=loc['id'])[0]]
+        #loc['images'] = str(instagram_api.location_recent_media(10, location_id=loc['id']))
+    
     return json.dumps(location_list)

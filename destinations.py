@@ -7,7 +7,7 @@ codes = CODE_TO_COORDINATES_MAPPING.keys()
 def create_destination(code):
     return {
             'code':code,
-            'city':CODE_TO_CITY_MAPPING[code],
+            'city':CODE_TO_CITY_MAPPING[code].split(',')[0],
             'coordinates': {
                 'lat':CODE_TO_COORDINATES_MAPPING[code][0],
                 'lng':CODE_TO_COORDINATES_MAPPING[code][1],

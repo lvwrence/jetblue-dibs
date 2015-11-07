@@ -3,9 +3,10 @@ from flask import Flask, render_template
 from instagram.client import InstagramAPI
 from code_to_coordinates import CODE_TO_COORDINATES_MAPPING
 from code_to_city import CODE_TO_CITY_MAPPING
+from flights import FLIGHTS
 import json
 
-instagram_api = InstagramAPI(client_id='f233967f16b645c0ad5ff867e481371a', client_secret='c6b4c91c88024f218362f5163f8f657d')
+INSTAGRAM_API = InstagramAPI(client_id='f233967f16b645c0ad5ff867e481371a', client_secret='c6b4c91c88024f218362f5163f8f657d')
 
 
 app = Flask(__name__)
@@ -27,10 +28,16 @@ def destinations():
 @app.route('/api/destinations/<code>/feed')
 def feed(code):
     lat, lng = CODE_TO_COORDINATES_MAPPING[code]
-    location_list = [x.__dict__ for x in instagram_api.location_search(lat=str(lat), lng=str(lng), distance=1000)]
+    location_list = [x.__dict__ for x in INSTAGRAM_API.location_search(lat=str(lat), lng=str(lng), distance=1000)]
+
+    flights_to = get_flight_to(code)
+
     for loc in location_list:
         loc['point'] = str(loc['point'])[7:]
-        loc['images'] = [p.get_standard_resolution_url() for p in instagram_api.location_recent_media(10, location_id=loc['id'])[0]]
-        #loc['images'] = str(instagram_api.location_recent_media(10, location_id=loc['id']))
+        loc['images'] = [p.get_standard_resolution_url() for p in INSTAGRAM_API.location_recent_media(10, location_id=loc['id'])[0]]
+        #loc['images'] = str(INSTAGRAM_API.location_recent_media(10, location_id=loc['id']))
     location_list = [x for x in location_list if x['images'] != []]
-    return json.dumps(location_list)
+    return json.dumps(dict(location_list=location_list, flights=flights_to))
+
+def get_flight_to(dest_code, flights=FLIGHTS):
+    return [f for f in flights if f['dest'] == dest_code]

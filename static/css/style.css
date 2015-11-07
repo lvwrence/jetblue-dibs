@@ -44,10 +44,19 @@
 }
 
 .subpage-feed {
+    background-color: #2a2a2a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 0;
     float: left;
-    width: 340px;
+    width: 25%;
 }
 
 .subpage-feed-photo {
-    width: 100%;
+    border-radius: 5px;
+    display: block;
+    width: 280px;
+    margin: 0.5em auto;
 }

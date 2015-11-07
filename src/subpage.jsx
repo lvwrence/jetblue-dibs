@@ -11,7 +11,7 @@ var Feed = React.createClass({
 
   getInitialState: function() {
     return {
-      photos: ['https://scontent-lga3-1.cdninstagram.com/hphotos-xtf1/t51.2885-15/e35/12224410_1675698252715933_34938382_n.jpg']
+      photos: []
     };
   },
 
@@ -19,14 +19,24 @@ var Feed = React.createClass({
     request
     .get('api/destinations/' + this.props.code + '/feed')
     .end(function(err, res) {
+      var newPhotos = JSON.parse(res.text);
+      var i = 0;
 
       setInterval(function() {
         var photos = this.state.photos.slice(0);
 
         if (photos.length === 3) {
-          photos.splice(0, 1);
+          photos.splice(2, 1);
         }
-        photos.unshift('https://scontent-lga3-1.xx.fbcdn.net/hprofile-xtf1/v/t1.0-1/c192.192.768.768/s320x320/12042648_10156080020945722_4267941789067235661_n.jpg?oh=2d0a9788f4f75996968911595d75d802&oe=56BA860C');
+
+        photos.unshift(newPhotos[i]['images'][0]);
+        console.log(photos);
+
+        if (i === newPhotos.length - 1) {
+          i = 0;
+        } else {
+          i++;
+        }
 
         this.setState({
           photos: photos
@@ -40,7 +50,7 @@ var Feed = React.createClass({
   render: function() {
     var rows = this.state.photos.map(function(photo) {
       return (
-        <div className='row' key={photo}>
+        <div className='row subpage-feed-photo-row' key={photo}>
           <img src={photo} className='subpage-feed-photo' />
         </div>
       );
@@ -64,6 +74,7 @@ var Subpage = React.createClass({
     return (
       <div className='subpage'>
         <Feed code={code} />
+        {/* main content here */}
       </div>
     );
   }

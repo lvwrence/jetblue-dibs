@@ -1,5 +1,6 @@
 from code_to_coordinates import CODE_TO_COORDINATES_MAPPING
 from code_to_city import CODE_TO_CITY_MAPPING, ALL_CODES
+from code_to_image import CODE_TO_IMAGE_MAPPING
 from most_liked_pics import get_most_liked_pics
 import json
 
@@ -13,7 +14,7 @@ def create_destination(code):
                 'lat':CODE_TO_COORDINATES_MAPPING[code][0],
                 'lng':CODE_TO_COORDINATES_MAPPING[code][1],
                 },
-            'image': code_to_pic[code]
+            'image': CODE_TO_IMAGE_MAPPING[code]
             }
 
 code_to_pic = get_most_liked_pics(ALL_CODES)

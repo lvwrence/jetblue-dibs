@@ -26,7 +26,7 @@ CODE_TO_CITY_MAPPING = {
         'PUJ':'Punta Cana, Dominican Republic',
         'RSW':'Fort Meyers, Florida',
         'SAN':'San Diego, California',
-        'SDQ':'Santo Domingo and Boca Chica, Dominican Republic',
+        'SDQ':'Santo Domingo, Dominican Republic',
         'SFO':'San Francisco, California',
         'SJU':'San Juan, Puerto Rico',
         'SXM':'Saint Maarten, Saint Martin',
@@ -36,4 +36,4 @@ CODE_TO_CITY_MAPPING = {
         'BOS':'Boston, Massachusetts'
         }
 
-
+ALL_CODES = CODE_TO_CITY_MAPPING.keys()

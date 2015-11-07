@@ -16,4 +16,3 @@ def create_destination(code):
             }
 
 print(json.dumps([create_destination(code) for code in codes]))
-

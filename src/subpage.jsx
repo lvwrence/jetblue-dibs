@@ -1,6 +1,8 @@
 var React = require('react');
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 import { render } from 'react-dom';
 var request = require('superagent');
+
 
 var Feed = React.createClass({
   propTypes: {
@@ -32,14 +34,13 @@ var Feed = React.createClass({
       }.bind(this), 5000);
 
       console.log(res);
-
     }.bind(this));
   },
 
   render: function() {
     var rows = this.state.photos.map(function(photo) {
       return (
-        <div className='row'>
+        <div className='row' key={photo}>
           <img src={photo} className='subpage-feed-photo' />
         </div>
       );
@@ -47,7 +48,9 @@ var Feed = React.createClass({
 
     return (
       <div className='subpage-feed'>
-        {rows}
+        <ReactCSSTransitionGroup transitionName="feed" transitionEnterTimeout={500} transitionLeaveTimeout={300} >
+          {rows}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }

@@ -1,0 +1,25 @@
+{
+  "name": "jetblue-dibs",
+  "version": "1.0.0",
+  "description": "```GET``` to ```/api/destinations``` returns a list of all destination objects, where a destination object has fields: ``` {   code: \"YUL\",   city: \"Montreal\",   coordinates: {     lat: 45.5017,     lng: 73.5673   },   image: \"https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/e35/12224431_720653774746321_479880755_n.jpg\" } ```",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oneohtrix/jetblue-dibs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oneohtrix/jetblue-dibs/issues"
+  },
+  "homepage": "https://github.com/oneohtrix/jetblue-dibs#readme",
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

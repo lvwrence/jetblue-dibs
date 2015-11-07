@@ -3,11 +3,11 @@ from flask import Flask, render_template
 from instagram.client import InstagramAPI
 from code_to_coordinates import CODE_TO_COORDINATES_MAPPING
 from code_to_city import CODE_TO_CITY_MAPPING
+from code_to_images import CODE_TO_IMAGES_MAPPING
 from flights import FLIGHTS
 import json
 
 INSTAGRAM_API = InstagramAPI(client_id='f233967f16b645c0ad5ff867e481371a', client_secret='c6b4c91c88024f218362f5163f8f657d')
-
 
 app = Flask(__name__)
 app.debug = True
@@ -34,8 +34,7 @@ def feed(code):
 
     for loc in location_list:
         loc['point'] = str(loc['point'])[7:]
-        loc['images'] = [p.get_standard_resolution_url() for p in INSTAGRAM_API.location_recent_media(10, location_id=loc['id'])[0]]
-        #loc['images'] = str(INSTAGRAM_API.location_recent_media(10, location_id=loc['id']))
+        loc['images'] = [link for link in location_list[loc]]
     location_list = [x for x in location_list if x['images'] != []]
     return json.dumps(dict(location_list=location_list, flights=flights_to))
 

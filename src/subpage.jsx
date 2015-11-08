@@ -78,10 +78,12 @@ var Subpage = React.createClass({
     var flightTo;
     var staying;
     var hotelImage;
+    var bookNow;
     if (this.state.flight) {
       flightTo = <h1 className='subpage-header'>Hey! Here's your flight to {this.state.flight.dest_city}.</h1>
       staying = <h1 className='subpage-header'>You'll be staying at the {this.state.flight.hotel_property}.</h1>;
       hotelImage = <img className='subpage-hotel-image' src={this.state.hotelImage} />
+      bookNow = <button className='pure-button pure-button-primary book-now'>Book Now</button>
     } else {
       flightTo = <h1 className='subpage-header'>Hey! Here's your flight:</h1>
     }
@@ -94,6 +96,7 @@ var Subpage = React.createClass({
           <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
           {staying}
           {hotelImage}
+          {bookNow}
         </div>
       </div>
     );

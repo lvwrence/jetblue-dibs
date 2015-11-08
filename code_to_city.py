@@ -32,8 +32,7 @@ CODE_TO_CITY_MAPPING = {
         'SXM':'Saint Maarten, Saint Martin',
         'TPA':'Tampa, Florida',
         'UVF':'Saint Lucia, Caribbean',
-        'LGB':'Long Beach, California',
-        'BOS':'Boston, Massachusetts'
+        'LGB':'Long Beach, California'
         }
 
 ALL_CODES = CODE_TO_CITY_MAPPING.keys()

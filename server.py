@@ -4,6 +4,7 @@ from instagram.client import InstagramAPI
 from code_to_coordinates import CODE_TO_COORDINATES_MAPPING
 from code_to_city import CODE_TO_CITY_MAPPING
 from code_to_images import CODE_TO_IMAGES_MAPPING
+from code_to_hotel import CODE_TO_HOTEL
 from flights import FLIGHTS
 import json
 
@@ -34,8 +35,8 @@ def feed(code):
 
     for loc in location_list:
         loc['point'] = str(loc['point'])[7:]
-
         loc['images'] = [link for link in CODE_TO_IMAGES_MAPPING.get(code, [])]
+        loc['hotel_image'] = CODE_TO_HOTEL.get(code, '')
 
     location_list = [x for x in location_list if x['images'] != []]
 

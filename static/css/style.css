@@ -62,3 +62,8 @@
     width: 280px;
     margin: 0.5em auto;
 }
+
+.map-gic {
+  height: 300px;
+  width: 100%;
+}

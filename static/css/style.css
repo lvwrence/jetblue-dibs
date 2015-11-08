@@ -53,14 +53,18 @@
     bottom: 0;
     margin-bottom: 0;
     float: left;
-    width: 25%;
+    width: 15%;
+}
+
+.subpage-feed-photo-row {
+    margin: 25px;
 }
 
 .subpage-feed-photo {
     border-radius: 5px;
     display: block;
-    width: 280px;
-    margin: 0.5em auto;
+    width: 90%;
+    margin: 5px auto;
 }
 
 .map-gic {

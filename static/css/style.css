@@ -99,6 +99,10 @@
     margin: 0.1em;
 }
 
+.subpage-hotel-image {
+    width: 100%;
+}
+
 .map-gic {
     height: 300px;
     width: 100%;

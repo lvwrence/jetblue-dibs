@@ -80,8 +80,8 @@ var Subpage = React.createClass({
     var hotelImage;
     var bookNow;
     if (this.state.flight) {
-      flightTo = <h1 className='subpage-header'>Hey! Here's your flight to {this.state.flight.dest_city}.</h1>
-      staying = <h1 className='subpage-header'>You'll be staying at the {this.state.flight.hotel_property}.</h1>;
+      flightTo = <h1 className='subpage-header'>Hey! Here's your flight to <span className='jetblue'>{this.state.flight.dest_city}</span>.</h1>
+      staying = <h1 className='subpage-header'>You'll be staying at the <span className='jetblue'>{this.state.flight.hotel_property}</span>.</h1>;
       hotelImage = <img className='subpage-hotel-image' src={this.state.hotelImage} />
       bookNow = <a href='http://www.jetblue.com/vacations/'><button className='pure-button pure-button-primary book-now'>Book Now</button></a>
     } else {

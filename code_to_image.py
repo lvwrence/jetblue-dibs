@@ -30,6 +30,5 @@ CODE_TO_IMAGE_MAPPING = {
         'SXM':'https://scontent-lga3-1.cdninstagram.com/hphotos-xpa1/t51.2885-15/s640x640/sh0.08/e35/12145512_1647458982197163_2080366095_n.jpg',
         'TPA':'https://scontent-lga3-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/s640x640/sh0.08/e35/12081134_455533497971078_1545134642_n.jpg',
         'UVF':'https://scontent-lga3-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/e35/c225.0.630.630/12081025_477967539042246_751634951_n.jpg',
-        'LGB':'https://scontent-lga3-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/s640x640/sh0.08/e35/12135471_1511634089152090_2139263995_n.jpg',
         'BOS':'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/11008201_620894848050026_1534325916_n.jpg'
         }

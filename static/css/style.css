@@ -5,6 +5,10 @@
     font-weight: 900;
 }
 
+.jetblue {
+    color: #00379B;
+}
+
 .tagline {
     width: 78%;
     font-size: 30px;
@@ -99,7 +103,16 @@
     margin: 0.1em;
 }
 
+.subpage-hotel-image {
+    width: 100%;
+}
+
 .map-gic {
     height: 300px;
     width: 100%;
+}
+
+.book-now {
+    width: 100%;
+    margin: 3em auto;
 }

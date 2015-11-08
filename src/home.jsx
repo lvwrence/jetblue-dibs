@@ -77,14 +77,16 @@ var Home = React.createClass({
     });
 
     return (
-      <div>
-        <h1 className='projectname'>Dibs.</h1>
-        <h2 className='tagline'>Be the first to know. Be the first to book.</h2>
+      <span>
+        <h1 className='projectname'>Dibs, by <span className='jetblue'>JetBlue</span>.</h1>
+        <h2 className='tagline'>Discounted travel packages.</h2>
+        <h2 className='tagline'>Be the first to know.</h2>
+        <h2 className='tagline'>Be the first to book.</h2>
         <div className='homepage-module'>
           {rowDivs}
         </div>
-        <h3 className='credits'>A hack by Lawrence Wu, Jesse Gleave-Riemann, Jaehyun Wie, and Philip Kukulak.</h3>
-      </div>
+        <h3 className='credits'>A hack by Lawrence Wu, Jesse Gleave Riemann, Jaehyun Wie, and Philip Kukulak.</h3>
+      </span>
     );
   }
 });

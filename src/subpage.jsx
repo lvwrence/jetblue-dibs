@@ -35,6 +35,7 @@ var Subpage = React.createClass({
     return {
         flight: null,
         photos: [],
+        hotelImage: null
     };
   },
   componentDidMount: function() {
@@ -49,7 +50,8 @@ var Subpage = React.createClass({
       var photos = codeObj.location_list[0].images;
       this.setState({
         flight: codeObj.flight,
-        photos: [photos[0]]
+        photos: [photos[0]],
+        hotelImage: codeObj.location_list[0]['hotel_image']
       });
 
       this.refs.map.setMap(codeObj.flight);
@@ -59,7 +61,6 @@ var Subpage = React.createClass({
         var newPhotos = this.state.photos.slice(0);
         newPhotos.unshift(photos[i]);
         newPhotos.splice(3, 1);
-
 
         this.setState({
           photos: newPhotos
@@ -74,24 +75,28 @@ var Subpage = React.createClass({
     }.bind(this));
   },
   render: function() {
-    var flight_to;
+    var flightTo;
     var staying;
+    var hotelImage;
+    var bookNow;
     if (this.state.flight) {
-      flight_to = <h1 className='subpage-header'>Hey! Here's your flight to {this.state.flight.dest_city}.</h1>
-      staying = <h1 className='subpage-header'>You'll be staying at the {this.state.flight.hotel_property}.</h1>;
+      flightTo = <h1 className='subpage-header'>Hey! Here's your flight to <span className='jetblue'>{this.state.flight.dest_city}</span>.</h1>
+      staying = <h1 className='subpage-header'>You'll be staying at the <span className='jetblue'>{this.state.flight.hotel_property}</span>.</h1>;
+      hotelImage = <img className='subpage-hotel-image' src={this.state.hotelImage} />
+      bookNow = <a href='http://www.jetblue.com/vacations/'><button className='pure-button pure-button-primary book-now'>Book Now</button></a>
     } else {
-      flight_to = <h1 className='subpage-header'>Hey! Here's your flight:</h1>
-      staying = null;
+      flightTo = <h1 className='subpage-header'>Hey! Here's your flight:</h1>
     }
-
 
     return (
       <div className='subpage'>
         <Feed photos={this.state.photos} />
         <div className='subpage-content'>
-          {flight_to}
+          {flightTo}
           <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
           {staying}
+          {hotelImage}
+          {bookNow}
         </div>
       </div>
     );

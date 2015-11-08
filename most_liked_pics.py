@@ -9,7 +9,6 @@ def get_instagram_locations(code):
     lat, lng = CODE_TO_COORDINATES_MAPPING[code]
     return instagram_api.location_search(lat=str(lat), lng=str(lng), distance=1000)
 
-
 def get_most_liked_pics(codes):
     code_pic = {}
 
@@ -24,8 +23,6 @@ def get_most_liked_pic_by_tag(code):
     medium = filter(lambda x: x.type == 'image', medium)
     liked_medium = most_liked_medium(medium)
     return liked_medium.get_standard_resolution_url()
-
-
 
 def get_most_liked_pic_by_location(code):
     print code
@@ -48,9 +45,7 @@ def get_most_liked_pic_by_location(code):
 
     return most_liked.get_standard_resolution_url()
 
-
 def most_liked_medium(medium):
     return max(medium, key=lambda m: len(m.likes))
-
 
 print get_most_liked_pics(ALL_CODES)

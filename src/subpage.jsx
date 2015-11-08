@@ -11,18 +11,18 @@ var Feed = React.createClass({
   },
 
   render: function() {
-/*
-    var rows = this.props.locations.map(function(location) {
-
-      return (
-        <div className='row subpage-feed-photo-row' key={photo}>
-          <img src={photo} className='subpage-feed-photo' />
-        </div>
-      );
-    });
-*/
-
-    var rows = [];
+    var rows;
+    if (this.props.locations.length > 0) {
+      rows = this.props.locations[0].images.map(function(photo) {
+        return (
+          <div className='row subpage-feed-photo-row' key={photo}>
+            <img src={photo} className='subpage-feed-photo' />
+          </div>
+        );
+      });
+    } else {
+      rows = 0;
+    }
 
     return (
       <div className='subpage-feed'>
@@ -32,12 +32,6 @@ var Feed = React.createClass({
       </div>
     );
   }
-});
-
-var Map = React.createClass({
-  render: function() {
-            return <h1> Hello world </h1>
-          }
 });
 
 var Subpage = React.createClass({
@@ -73,15 +67,12 @@ var Subpage = React.createClass({
       <div className='subpage'>
         <Feed locations={this.state.locations} />
         <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
-        {/* main content here */}
-        <Map />
       </div>
     );
   }
 });
 
 var GoogleMap = React.createClass({
-
   setMap: function (flight) {
     var originLocation = makeLatLng(flight.origin_coords);
     var destLocation = makeLatLng(flight.dest_coords);
@@ -91,7 +82,7 @@ var GoogleMap = React.createClass({
           center: originLocation,
           zoom: 6
     };
-    
+
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0; i < markers.length; i++) {
       bounds.extend(markers[i]);

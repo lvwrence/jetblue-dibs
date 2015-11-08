@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-CODE_TO_CITY_MAPPING = {
+CODE_TO_HOTEL = {
         'AUA':'http://www.iammadein.com/aruba/wp-content/uploads/2015/03/amsterdam-manor-resort.jpg',
         'AZS':'http://r-ec.bstatic.com/images/hotel/840x460/414/41476196.jpg',
         'BDA':'http://media-cdn.tripadvisor.com/media/photo-s/04/24/78/f1/cambridge-beaches.jpg',
@@ -35,5 +35,3 @@ CODE_TO_CITY_MAPPING = {
         'LGB':'',
         'BOS':''
         }
-
-ALL_CODES = CODE_TO_CITY_MAPPING.keys()

@@ -59,12 +59,17 @@ var Home = React.createClass({
     var rows = [];
     var row = [];
     var count = 0;
+    function shuffle(o){
+        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
+    }
     for (var i = 0; i < this.state.destinations.length; i++) {
       if (i && i % 3 === 0) {
-        rows.push(row);
+        rows.push(shuffle(row));
         row = [];
       }
       row.push(this.state.destinations[i]);
+      shuffle(rows);
     }
 
     var rowDivs = rows.map(function(row) {

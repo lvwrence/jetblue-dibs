@@ -1,7 +1,15 @@
-.tagline {
+.projectname {
     width: 80%;
     margin: 1em auto;
     color: #FF8800;
+    font-weight: 900;
+}
+
+.tagline {
+    width: 78%;
+    font-size: 30px;
+    margin: 1em auto;
+    color: #FFA07A;
     font-weight: 900;
 }
 
@@ -56,11 +64,31 @@
     width: 25%;
 }
 
+.subpage-feed-photo-row {
+    margin: 25px;
+}
+
 .subpage-feed-photo {
     border-radius: 5px;
     display: block;
-    width: 280px;
-    margin: 0.5em auto;
+    width: 90%;
+    margin: 5px auto;
+}
+
+.subpage-content {
+    margin-top: 2.5em;
+    margin-left: 30%;
+}
+
+.subpage-header {
+    font-weight: 450;
+    padding-top: 47px;
+    padding-bottom: 47px;
+    color: #313131;
+}
+
+.subpage-header {
+    margin: 0.1em;
 }
 
 .map-gic {

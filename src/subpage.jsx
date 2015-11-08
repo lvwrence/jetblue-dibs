@@ -11,18 +11,18 @@ var Feed = React.createClass({
   },
 
   render: function() {
-/*
-    var rows = this.props.locations.map(function(location) {
-
-      return (
-        <div className='row subpage-feed-photo-row' key={photo}>
-          <img src={photo} className='subpage-feed-photo' />
-        </div>
-      );
-    });
-*/
-
-    var rows = [];
+    var rows;
+    if (this.props.locations.length > 0) {
+      rows = this.props.locations[0].images.map(function(photo) {
+        return (
+          <div className='row subpage-feed-photo-row' key={photo}>
+            <img src={photo} className='subpage-feed-photo' />
+          </div>
+        );
+      });
+    } else {
+      rows = 0;
+    }
 
     return (
       <div className='subpage-feed'>
@@ -32,12 +32,6 @@ var Feed = React.createClass({
       </div>
     );
   }
-});
-
-var Map = React.createClass({
-  render: function() {
-            return <h1> Hello world </h1>
-          }
 });
 
 var Subpage = React.createClass({
@@ -72,35 +66,43 @@ var Subpage = React.createClass({
     return (
       <div className='subpage'>
         <Feed locations={this.state.locations} />
-        <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
-        {/* main content here */}
-        <Map />
+        <div className='subpage-content'>
+          <h1 className='subpage-header'>Hey! This is your flight:</h1>
+          <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
+          <h1 className='subpage-header'>This is where you'll be staying:</h1>
+        </div>
       </div>
     );
   }
 });
 
 var GoogleMap = React.createClass({
-
   setMap: function (flight) {
     var originLocation = makeLatLng(flight.origin_coords);
     var destLocation = makeLatLng(flight.dest_coords);
     var markers = [originLocation, destLocation];
 
     var mapOptions = {
-          center: originLocation,
-          zoom: 6
+      disableDefaultUI: true,
+      draggable: false,
+      panControl: false,
+      zoomControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      mapTypeControl: false
     };
-    
+
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0; i < markers.length; i++) {
       bounds.extend(markers[i]);
     }
 
-    var map = new google.maps.Map(this.refs.googleMap); //, mapOptions);
+    var map = new google.maps.Map(this.refs.googleMap, mapOptions);
 
-    var originMarker = new google.maps.Marker({position: originLocation, title: 'Hi', map: map});
-    var destMarker = new google.maps.Marker({position: destLocation, title: 'Hi', map: map});
+    var originMarker = new google.maps.Marker({position: originLocation, map: map});
+    originMarker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+
+    var destMarker = new google.maps.Marker({position: destLocation, map: map});
     var flightPath = new google.maps.Polyline({
             path: markers,
             geodesic: true,

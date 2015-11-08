@@ -73,7 +73,8 @@ var Home = React.createClass({
 
     return (
       <div>
-        <h1 className='tagline'>Get dibs.</h1>
+        <h1 className='projectname'>Dibs.</h1>
+        <h2 className='tagline'>Be the first to know. Be the first to book.</h2>
         <div className='homepage-module'>
           {rowDivs}
         </div>

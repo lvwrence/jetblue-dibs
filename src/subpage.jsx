@@ -100,6 +100,8 @@ var GoogleMap = React.createClass({
     var map = new google.maps.Map(this.refs.googleMap, mapOptions);
 
     var originMarker = new google.maps.Marker({position: originLocation, map: map});
+    originMarker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+
     var destMarker = new google.maps.Marker({position: destLocation, map: map});
     var flightPath = new google.maps.Polyline({
             path: markers,

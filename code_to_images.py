@@ -213,9 +213,17 @@ CODE_TO_IMAGES_MAPPING = {
                 
                 ],
         'LGB': [
-                
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/c180.0.719.719/12224534_1665165620431606_439012207_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xap1/t51.2885-15/s640x640/sh0.08/e35/10005490_1211755822184985_1481530936_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/11906210_1687655338125230_988303034_n.jpg',
+                'https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-15/s640x640/sh0.08/e35/11377772_564445740379545_782980703_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpa1/t51.2885-15/s640x640/sh0.08/e35/11176224_1519641148357484_996097987_n.jpg'
                 ],
         'BOS': [
-                
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xaf1/t51.2885-15/s640x640/sh0.08/e35/11930816_503981119773104_1788277711_n.jpg',
+                'https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xtf1/t51.2885-15/s640x640/sh0.08/e35/c8.0.1064.1064/11296916_972592852806070_369290599_n.jpg',
+                'https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xft1/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/12224644_1061596007184076_1270957944_n.jpg',
+                'https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xtf1/t51.2885-15/e15/12224096_139926443029695_1418926612_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xat1/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/11385122_1646948585576057_981668223_n.jpg'
                 ]
 }

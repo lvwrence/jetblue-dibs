@@ -66,7 +66,11 @@ var Subpage = React.createClass({
     return (
       <div className='subpage'>
         <Feed locations={this.state.locations} />
-        <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
+        <div className='subpage-content'>
+          <h1 className='subpage-header'>Hey, this is your flight:</h1>
+          <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
+          <h1 className='subpage-header'>and this is where you'll be staying:</h1>
+        </div>
       </div>
     );
   }

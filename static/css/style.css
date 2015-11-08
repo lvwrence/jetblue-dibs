@@ -67,6 +67,15 @@
     margin: 5px auto;
 }
 
+.subpage-content {
+    margin-top: 2.5em;
+    margin-left: 20%;
+}
+
+.subpage-header {
+    margin: 0.1em;
+}
+
 .map-gic {
   height: 300px;
   width: 100%;

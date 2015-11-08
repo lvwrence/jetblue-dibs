@@ -30,13 +30,16 @@ def feed(code):
     lat, lng = CODE_TO_COORDINATES_MAPPING[code]
     location_list = [x.__dict__ for x in INSTAGRAM_API.location_search(lat=str(lat), lng=str(lng), distance=1000)]
 
-    flights_to = get_flight_to(code)
+    earliest_flight_to = get_earliest_flight_to(code)
 
     for loc in location_list:
         loc['point'] = str(loc['point'])[7:]
-        loc['images'] = [link for link in CODE_TO_IMAGES_MAPPING[str(code)]]
-    location_list = [x for x in location_list if x['images'] != []]
-    return json.dumps(dict(location_list=location_list, flights=flights_to))
 
-def get_flight_to(dest_code, flights=FLIGHTS):
-    return [f for f in flights if f['dest'] == dest_code]
+        loc['images'] = [link for link in CODE_TO_IMAGES_MAPPING.get(code, [])]
+
+    location_list = [x for x in location_list if x['images'] != []]
+
+    return json.dumps(dict(location_list=location_list, flight=earliest_flight_to))
+
+def get_earliest_flight_to(dest_code, flights=FLIGHTS):
+    return next(f for f in flights if f['dest'] == dest_code)

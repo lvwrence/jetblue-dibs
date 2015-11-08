@@ -7,22 +7,18 @@ var request = require('superagent');
 
 var Feed = React.createClass({
   propTypes: {
-    locations: React.PropTypes.array.isRequired
+    photos: React.PropTypes.array.isRequired
   },
 
   render: function() {
-    var rows;
-    if (this.props.locations.length > 0) {
-      rows = this.props.locations[0].images.map(function(photo) {
-        return (
-          <div className='row subpage-feed-photo-row' key={photo}>
-            <img src={photo} className='subpage-feed-photo' />
-          </div>
-        );
-      });
-    } else {
-      rows = 0;
-    }
+    console.log(this.props.photos);
+    var rows = this.props.photos.map(function(photo) {
+      return (
+        <div className='row subpage-feed-photo-row' key={photo}>
+          <img src={photo} className='subpage-feed-photo' />
+        </div>
+      );
+    });
 
     return (
       <div className='subpage-feed'>
@@ -38,34 +34,47 @@ var Subpage = React.createClass({
   getInitialState: function() {
     return {
         flight: null,
-        locations: [],
+        photos: [],
     };
   },
   componentDidMount: function() {
     var urlPieces = window.location.href.split('/');
     var code = urlPieces[urlPieces.length - 1];
 
-
     request
     .get('api/destinations/' + code + '/feed')
     .end(function(err, res) {
-
       var codeObj = JSON.parse(res.text);
-      console.log(codeObj);
-
+      var photos = codeObj.location_list[0].images;
       this.setState({
         flight: codeObj.flight,
-        locations: codeObj.location_list
+        photos: [photos[0]]
       });
+
       this.refs.map.setMap(codeObj.flight);
 
+      var i = 1;
+      setInterval(function() {
+        var newPhotos = this.state.photos.slice(0);
+        newPhotos.unshift(photos[i]);
+
+        this.setState({
+          photos: newPhotos
+        });
+
+        if (i === photos.length - 1) {
+          i = 0;
+        } else {
+          i++;
+        }
+      }.bind(this), 3000);
     }.bind(this));
   },
   render: function() {
 
     return (
       <div className='subpage'>
-        <Feed locations={this.state.locations} />
+        <Feed photos={this.state.photos} />
         <div className='subpage-content'>
           <h1 className='subpage-header'>Hey! This is your flight:</h1>
           <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
@@ -120,7 +129,7 @@ var GoogleMap = React.createClass({
   render: function () {
     return (
         <div ref="googleMap" className='map-gic'></div>
-        );
+    );
   }
 });
 

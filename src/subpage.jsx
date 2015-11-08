@@ -45,6 +45,7 @@ var Subpage = React.createClass({
     .get('api/destinations/' + code + '/feed')
     .end(function(err, res) {
       var codeObj = JSON.parse(res.text);
+      console.log(codeObj);
       var photos = codeObj.location_list[0].images;
       this.setState({
         flight: codeObj.flight,
@@ -73,12 +74,18 @@ var Subpage = React.createClass({
     }.bind(this));
   },
   render: function() {
+    var flight_to;
+    if (this.state.flight) {
+      flight_to = <h1 className='subpage-header'>Hey! This is your flight to {this.state.flight.dest_city}:</h1>
+    } else {
+      flight_to = <h1 className='subpage-header'>Hey! This is your flight:</h1>
+    }
 
     return (
       <div className='subpage'>
         <Feed photos={this.state.photos} />
         <div className='subpage-content'>
-          <h1 className='subpage-header'>Hey! This is your flight:</h1>
+          {flight_to}
           <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
           <h1 className='subpage-header'>This is where you'll be staying:</h1>
         </div>

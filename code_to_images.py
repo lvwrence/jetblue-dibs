@@ -84,17 +84,75 @@ CODE_TO_IMAGES_MAPPING = {
             'https://scontent-lga3-1.cdninstagram.com/hphotos-xap1/t51.2885-15/s640x640/sh0.08/e35/10632509_1677097212574314_1434674890_n.jpg'
             ],
         'LAX': [
-                'https://scontent-lga3-1.cdninstagram.com/hphotos-xat1/t51.2885-15/s640x640/sh0.08/e35/12144037_190297714643865_966515565_n.jpg'
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xat1/t51.2885-15/s640x640/sh0.08/e35/12144037_190297714643865_966515565_n.jpg',
+                'https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xta1/t51.2885-15/s640x640/sh0.08/e35/12120508_1536114313346582_1519751559_n.jpg',
+                'https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xap1/t51.2885-15/e35/10254145_1482919832014525_216438301_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11925647_1519463195039781_967882791_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/e35/12063091_832137483566731_1395751505_n.jpg'
                 ],
-        'LIR': [],
-        'LRM': [],
-        'MBJ': [],
-        'MCO': [],
-        'MSY': [],
-        'NAS': [],
-        'PBI': [],
-        'PLS': [],
-        'POP': [],
+        'LIR': [
+                'https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xta1/t51.2885-15/s640x640/sh0.08/e35/12106073_1069521723087807_376150005_n.jpg',
+                'https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xtf1/t51.2885-15/s640x640/sh0.08/e35/11375788_468774009971569_1622573787_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11385116_1601551960132149_1563961142_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11023001_1564138633840400_1845721285_n.jpg',
+                'https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-prn/t51.2885-15/e15/10655013_573692729409323_1133748964_n.jpg'
+                ],
+        'LRM': [
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xtp1/t51.2885-15/s640x640/sh0.08/e35/12107696_1035893566450358_947317293_n.jpg',
+                'https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xft1/t51.2885-15/s640x640/sh0.08/e35/12224100_1518118268508614_376718624_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xft1/t51.2885-15/s640x640/sh0.08/e35/11420778_1528436907447248_105456769_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/s640x640/sh0.08/e35/c180.0.720.720/12141917_1625880547673078_1369116113_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xap1/t51.2885-15/s640x640/sh0.08/e35/1971347_917430808334562_1613271927_n.jpg'
+                ],
+        'MBJ': [
+                'https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/s640x640/sh0.08/e35/11906360_305369219633747_1893630269_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/11931231_1725151104382118_427236551_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/11906120_936376203116549_1138978390_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/e35/c160.0.640.640/11931163_168784003470438_1433830451_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpa1/t51.2885-15/s640x640/sh0.08/e35/11950676_598501720289267_427751640_n.jpg'
+                ],
+        'MCO': [
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xtf1/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/11262620_189100494759551_1322205835_n.jpg',
+                'https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xpt1/t51.2885-15/s640x640/sh0.08/e35/c0.100.800.800/11296906_977031509025231_1405441984_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/e35/c150.0.600.600/10955387_1483357328638602_1309039630_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/12224181_965395946852732_162354619_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/s640x640/sh0.08/e35/12224613_969266893111718_1409318802_n.jpg'
+                ],
+        'MSY': [
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xtp1/t51.2885-15/e35/12120385_1644515355796828_1809295099_n.jpg',
+                'https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-15/s640x640/sh0.08/e35/11910377_1675043406109936_1520401703_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpa1/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/12230808_970819619644762_112449591_n.jpg',
+                'https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-15/s640x640/sh0.08/e35/11934762_1161521727209281_1230183745_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/s640x640/sh0.08/e35/11251870_1662214224050686_1833203277_n.jpg'
+                ],
+        'NAS': [
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xtp1/t51.2885-15/s640x640/sh0.08/e35/c0.98.1080.1080/12224133_860492157379467_838783319_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpt1/t51.2885-15/s640x640/sh0.08/e35/12063229_993026417428923_1371739959_n.jpg',
+                'https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/s640x640/sh0.08/e35/11382949_1672251929664145_1396451452_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/s640x640/sh0.08/e35/11910312_1677908742479471_1066188674_n.jpg',
+                'https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xap1/t51.2885-15/s640x640/sh0.08/e35/11950531_192651874404657_386993417_n.jpg'
+                ],
+        'PBI': [
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/11427363_528026164023017_1826178606_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/12224315_545273978960004_811685622_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/e35/c90.0.540.540/11931107_979486152115090_441918885_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xtp1/t51.2885-15/s640x640/sh0.08/e35/12142043_1515638858753094_1184556537_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xta1/t51.2885-15/s640x640/sh0.08/e35/c0.135.1080.1080/12120226_547005715450140_204516360_n.jpg'
+                ],
+        'PLS': [
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/c123.0.834.834/11950655_897011940348796_1569120462_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xap1/t51.2885-15/e35/c166.0.418.418/12080456_171625013180413_2092848541_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/e35/c236.0.608.608/11931226_1092359774116817_711386498_n.jpg',
+                'https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/s640x640/sh0.08/e35/12224158_510578132447449_811231431_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/s640x640/sh0.08/e35/11373766_1060542487329846_1399710299_n.jpg'
+                ],
+        'POP': [
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/11950541_1713450002222293_456475910_n.jpg',
+                'https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xft1/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/12224320_772599992844367_1548398683_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xat1/t51.2885-15/s640x640/sh0.08/e35/c0.135.1080.1080/12093609_739156206189482_1769921406_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xap1/t51.2885-15/e35/c236.0.608.608/12071130_1496506177311993_725029883_n.jpg',
+                'https://scontent-lga3-1.cdninstagram.com/hphotos-xfp1/t51.2885-15/e35/11049232_780761018699633_79657236_n.jpg'
+                ],
         'PUJ': [],
         'RSW': [],
         'SAN': [],

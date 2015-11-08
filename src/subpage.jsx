@@ -14,7 +14,7 @@ var Feed = React.createClass({
     console.log(this.props.photos);
     var rows = this.props.photos.map(function(photo) {
       return (
-        <div className='row subpage-feed-photo-row' key={photo + Math.floor(Math.random() * 10001)}>
+        <div className='row subpage-feed-photo-row' key={photo}>
           <img src={photo} className='subpage-feed-photo' />
         </div>
       );
@@ -22,7 +22,7 @@ var Feed = React.createClass({
 
     return (
       <div className='subpage-feed'>
-        <ReactCSSTransitionGroup transitionName="feed" transitionEnterTimeout={500} transitionLeaveTimeout={300} >
+        <ReactCSSTransitionGroup transitionName="feed" transitionEnterTimeout={1000} >
           {rows}
         </ReactCSSTransitionGroup>
       </div>
@@ -57,7 +57,7 @@ var Subpage = React.createClass({
       setInterval(function() {
         var newPhotos = this.state.photos.slice(0);
         newPhotos.unshift(photos[i]);
-        newPhotos.splice(5, 1);
+        newPhotos.splice(3, 1);
 
 
         this.setState({

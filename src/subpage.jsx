@@ -79,8 +79,13 @@ var GoogleMap = React.createClass({
     var markers = [originLocation, destLocation];
 
     var mapOptions = {
-          center: originLocation,
-          zoom: 6
+      disableDefaultUI: true,
+      draggable: false,
+      panControl: false,
+      zoomControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      mapTypeControl: false
     };
 
     var bounds = new google.maps.LatLngBounds();
@@ -88,10 +93,10 @@ var GoogleMap = React.createClass({
       bounds.extend(markers[i]);
     }
 
-    var map = new google.maps.Map(this.refs.googleMap); //, mapOptions);
+    var map = new google.maps.Map(this.refs.googleMap, mapOptions);
 
-    var originMarker = new google.maps.Marker({position: originLocation, title: 'Hi', map: map});
-    var destMarker = new google.maps.Marker({position: destLocation, title: 'Hi', map: map});
+    var originMarker = new google.maps.Marker({position: originLocation, map: map});
+    var destMarker = new google.maps.Marker({position: destLocation, map: map});
     var flightPath = new google.maps.Polyline({
             path: markers,
             geodesic: true,

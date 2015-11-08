@@ -7,26 +7,22 @@ var request = require('superagent');
 
 var Feed = React.createClass({
   propTypes: {
-    locations: React.PropTypes.array.isRequired
+    photos: React.PropTypes.array.isRequired
   },
 
   render: function() {
-    var rows;
-    if (this.props.locations.length > 0) {
-      rows = this.props.locations[0].images.map(function(photo) {
-        return (
-          <div className='row subpage-feed-photo-row' key={photo}>
-            <img src={photo} className='subpage-feed-photo' />
-          </div>
-        );
-      });
-    } else {
-      rows = 0;
-    }
+    console.log(this.props.photos);
+    var rows = this.props.photos.map(function(photo) {
+      return (
+        <div className='row subpage-feed-photo-row' key={photo}>
+          <img src={photo} className='subpage-feed-photo' />
+        </div>
+      );
+    });
 
     return (
       <div className='subpage-feed'>
-        <ReactCSSTransitionGroup transitionName="feed" transitionEnterTimeout={500} transitionLeaveTimeout={300} >
+        <ReactCSSTransitionGroup transitionName="feed" transitionEnterTimeout={1000} >
           {rows}
         </ReactCSSTransitionGroup>
       </div>
@@ -38,38 +34,64 @@ var Subpage = React.createClass({
   getInitialState: function() {
     return {
         flight: null,
-        locations: [],
+        photos: [],
     };
   },
   componentDidMount: function() {
     var urlPieces = window.location.href.split('/');
     var code = urlPieces[urlPieces.length - 1];
 
-
     request
     .get('api/destinations/' + code + '/feed')
     .end(function(err, res) {
-
       var codeObj = JSON.parse(res.text);
       console.log(codeObj);
-
+      var photos = codeObj.location_list[0].images;
       this.setState({
         flight: codeObj.flight,
-        locations: codeObj.location_list
+        photos: [photos[0]]
       });
+
       this.refs.map.setMap(codeObj.flight);
 
+      var i = 1;
+      setInterval(function() {
+        var newPhotos = this.state.photos.slice(0);
+        newPhotos.unshift(photos[i]);
+        newPhotos.splice(3, 1);
+
+
+        this.setState({
+          photos: newPhotos
+        });
+
+        if (i === photos.length - 1) {
+          i = 0;
+        } else {
+          i++;
+        }
+      }.bind(this), 3000);
     }.bind(this));
   },
   render: function() {
+    var flight_to;
+    var staying;
+    if (this.state.flight) {
+      flight_to = <h1 className='subpage-header'>Hey! Here's your flight to {this.state.flight.dest_city}.</h1>
+      staying = <h1 className='subpage-header'>You'll be staying at the {this.state.flight.hotel_property}.</h1>;
+    } else {
+      flight_to = <h1 className='subpage-header'>Hey! Here's your flight:</h1>
+      staying = null;
+    }
+
 
     return (
       <div className='subpage'>
-        <Feed locations={this.state.locations} />
+        <Feed photos={this.state.photos} />
         <div className='subpage-content'>
-          <h1 className='subpage-header'>Hey! This is your flight:</h1>
+          {flight_to}
           <GoogleMap flight={this.state.flight} mlat="55.0000" mlong="-113.0000" ref="map"/>
-          <h1 className='subpage-header'>This is where you'll be staying:</h1>
+          {staying}
         </div>
       </div>
     );
@@ -120,7 +142,7 @@ var GoogleMap = React.createClass({
   render: function () {
     return (
         <div ref="googleMap" className='map-gic'></div>
-        );
+    );
   }
 });
 

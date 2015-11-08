@@ -78,6 +78,7 @@ var Home = React.createClass({
         <div className='homepage-module'>
           {rowDivs}
         </div>
+        <h3 className='credits'>A hack by Lawrence Wu, Jesse Gleave-Riemann, Jaehyun Wie, and Philip Kukulak.</h3>
       </div>
     );
   }

@@ -81,6 +81,13 @@
 }
 
 .subpage-header {
+    font-weight: 450;
+    padding-top: 47px;
+    padding-bottom: 47px;
+    color: #313131;
+}
+
+.subpage-header {
     margin: 0.1em;
 }
 

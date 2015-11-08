@@ -34,7 +34,7 @@ def feed(code):
 
     for loc in location_list:
         loc['point'] = str(loc['point'])[7:]
-        loc['images'] = [link for link in CODE_TO_IMAGES_MAPPING[loc]]
+        loc['images'] = [link for link in CODE_TO_IMAGES_MAPPING[str(code)]]
     location_list = [x for x in location_list if x['images'] != []]
     return json.dumps(dict(location_list=location_list, flights=flights_to))
 

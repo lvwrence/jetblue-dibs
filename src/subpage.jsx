@@ -66,6 +66,12 @@ var Feed = React.createClass({
   }
 });
 
+var Map = React.createClass({
+  render: function() {
+            return <h1> Hello world </h1>
+          }
+});
+
 var Subpage = React.createClass({
   render: function() {
     var urlPieces = window.location.href.split('/');
@@ -75,6 +81,7 @@ var Subpage = React.createClass({
       <div className='subpage'>
         <Feed code={code} />
         {/* main content here */}
+        <Map />
       </div>
     );
   }

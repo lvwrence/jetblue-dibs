@@ -1,7 +1,15 @@
-.tagline {
+.projectname {
     width: 80%;
     margin: 1em auto;
     color: #FF8800;
+    font-weight: 900;
+}
+
+.tagline {
+    width: 78%;
+    font-size: 30px;
+    margin: 1em auto;
+    color: #FFA07A;
     font-weight: 900;
 }
 
